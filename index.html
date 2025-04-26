@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 Indonesia 2020-2021 WebGIS</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>COVID-19 Clustering in Indonesia (2020-2021)</h1>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Filter Data</h2>
+        <label for="provinsi">Provinsi:</label>
+        <select id="provinsiFilter">
+          <option value="all">Semua Provinsi</option>
+          <option value="Indonesia">Total di Indonesia</option>
+          <option value="Aceh">Aceh</option>
+          <option value="Sumatera Utara">Sumatera Utara</option>
+          <option value="Sumatera Barat">Sumatera Barat</option>
+          <option value="Riau">Riau</option>
+          <option value="Kepulauan Riau">Kepulauan Riau</option>
+          <option value="Jambi">Jambi</option>
+          <option value="Bengkulu">Bengkulu</option>
+          <option value="Sumatera Selatan">Sumatera Selatan</option>
+          <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
+          <option value="Lampung">Lampung</option>
+          <option value="Banten">Banten</option>
+          <option value="DKI Jakarta">DKI Jakarta</option>
+          <option value="Jawa Barat">Jawa Barat</option>
+          <option value="Jawa Tengah">Jawa Tengah</option>
+          <option value="DI Yogyakarta">DI Yogyakarta</option>
+          <option value="Jawa Timur">Jawa Timur</option>
+          <option value="Bali">Bali</option>
+          <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+          <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+          <option value="Kalimantan Barat">Kalimantan Barat</option>
+          <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+          <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+          <option value="Kalimantan Timur">Kalimantan Timur</option>
+          <option value="Kalimantan Utara">Kalimantan Utara</option>
+          <option value="Sulawesi Utara">Sulawesi Utara</option>
+          <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+          <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+          <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+          <option value="Gorontalo">Gorontalo</option>
+          <option value="Sulawesi Barat">Sulawesi Barat</option>
+          <option value="Maluku">Maluku</option>
+          <option value="Maluku Utara">Maluku Utara</option>
+          <option value="Papua">Papua</option>
+          <option value="Papua Barat">Papua Barat</option>
+          <option value="Papua Selatan">Papua Selatan</option>
+          <option value="Papua Pegunungan">Papua Pegunungan</option>
+          <option value="Papua Tengah">Papua Tengah</option>
+        </select>
+        <button id="locateBtn" class="locatebtn">Locate Me</button>
+      </aside>
+
+      <main class="map-container">
+        <div id="map"></div>
+      </main>
+    </div>
+
+    <footer>
+      <p>Data Source: Indonesia COVID-19 (2020-2021)</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="js/locations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
