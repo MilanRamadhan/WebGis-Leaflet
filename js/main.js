@@ -34,11 +34,38 @@ document.getElementById("provinsiFilter").addEventListener("change", function (e
   var selectedProvinsi = e.target.value;
   if (selectedProvinsi === "all") {
     addMarkers(locations);
+    if (locations.length > 0) {
+      map.flyToBounds(markers.getBounds());
+    }
+  } else if (selectedProvinsi === "Indonesia") {
+    var indonesiaData = locations.find(function (loc) {
+      return loc.provinsi === "Indonesia";
+    });
+
+    if (indonesiaData) {
+      markers.clearLayers();
+      var marker = L.marker([indonesiaData.lat, indonesiaData.lng], { icon: customIcon }).addTo(map);
+      marker.bindPopup(indonesiaData.popup).openPopup();
+
+      map.flyTo([indonesiaData.lat, indonesiaData.lng], 5, {
+        animate: true,
+        duration: 2,
+      });
+    }
   } else {
-    var filtered = locations.filter(function (loc) {
-      return loc.Provinsi === selectedProvinsi;
+    var filtered = locations.filter(function (locations) {
+      return locations.provinsi === selectedProvinsi;
     });
     addMarkers(filtered);
+
+    if (filtered.length > 0) {
+      var lat = filtered[0].lat;
+      var lng = filtered[0].lng;
+      map.flyTo([lat, lng], 8, {
+        animate: true,
+        duration: 2,
+      });
+    }
   }
 });
 
@@ -52,7 +79,10 @@ document.getElementById("locateBtn").addEventListener("click", function () {
     function (position) {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
-      map.setView([lat, lng], 13);
+      map.flyTo([lat, lng], 13, {
+        animate: true,
+        duration: 2,
+      });
       L.marker([lat, lng]).addTo(map).bindPopup("You are here!").openPopup();
     },
     function () {

@@ -14,13 +14,14 @@ html {
 header {
   background-color: #003f5c;
   color: white;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
+  font-size: 0.9rem;
 }
 
 .container {
   display: flex;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 90px);
 }
 
 .sidebar {
@@ -75,7 +76,7 @@ header {
 footer {
   text-align: center;
   background-color: #f4f4f4;
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: 0.9rem;
 }
 
